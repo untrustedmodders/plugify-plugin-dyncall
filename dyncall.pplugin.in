@@ -1,0 +1,375 @@
+{
+	"$schema": "https://raw.githubusercontent.com/untrustedmodders/plugify/refs/heads/main/schemas/plugin.schema.json",
+	"fileVersion": 1,
+	"version": "${DYNCALL_VERSION}",
+	"friendlyName": "DynCall API",
+	"description": "The dyncall library encapsulates architecture-, OS- and compiler-specific function call semantics.",
+	"createdBy": "Daniel Adler & Tassilo Philipp",
+	"createdByURL": "https://dyncall.org/",
+	"docsURL": "https://dyncall.org/documentation",
+	"downloadURL": "https://github.com/untrustedmodders/dyncall/releases/download/v${DYNCALL_VERSION}/${DYNCALL_PACKAGE}.zip",
+	"updateURL": "https://untrustedmodders.github.com/dyncall/dyncall.json",
+	"entryPoint": "bin/dyncall",
+	"supportedPlatforms": [],
+	"languageModule": {
+		"name": "cpp"
+	},
+	"dependencies": [],
+	"exportedMethods": [
+	  {
+		"name": "NewVM",
+		"funcName": "NewVM",
+		"paramTypes": [
+		  {"type": "uint64", "name": "size"}
+		],
+		"retType": {"type": "ptr64"}
+	  },
+	  {
+		"name": "Free",
+		"funcName": "Free",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"}
+		],
+		"retType": {"type": "void"}
+	  },	
+	  {
+		"name": "Reset",
+		"funcName": "Reset",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"}
+		],
+		"retType": {"type": "void"}
+	  },	
+	  {
+		"name": "Mode",
+		"funcName": "Mode",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "int32", "name": "mode"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  
+	  {
+		"name": "ArgBool",
+		"funcName": "ArgBool",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "bool", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgChar",
+		"funcName": "ArgChar",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "bool", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgInt8",
+		"funcName": "ArgInt8",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "int8", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgUInt8",
+		"funcName": "ArgUInt8",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "uint8", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgInt16",
+		"funcName": "ArgInt16",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "int16", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgUInt16",
+		"funcName": "ArgUInt16",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "uint16", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgInt32",
+		"funcName": "ArgInt32",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "int32", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgUInt32",
+		"funcName": "ArgUInt32",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "uint32", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgInt64",
+		"funcName": "ArgInt64",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "int64", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgUInt64",
+		"funcName": "ArgUInt64",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "uint64", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgFloat",
+		"funcName": "ArgFloat",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "float", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgDouble",
+		"funcName": "ArgDouble",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "double", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgPointer",
+		"funcName": "ArgPointer",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "ArgAggr",
+		"funcName": "ArgAggr",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "aggrptr"},
+		  {"type": "ptr64", "name": "value"}
+		],
+		"retType": {"type": "void"}
+	  },
+
+	  {
+		"name": "CallBool",
+		"funcName": "CallBool",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "bool"}
+	  },
+	  {
+		"name": "CallChar",
+		"funcName": "CallChar",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "char8"}
+	  },
+	  {
+		"name": "CallInt8",
+		"funcName": "CallInt8",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "int8"}
+	  },
+	  {
+		"name": "CallUInt8",
+		"funcName": "CallUInt8",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "uint8"}
+	  },
+	  {
+		"name": "CallInt16",
+		"funcName": "CallInt16",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "int16"}
+	  },
+	  {
+		"name": "CallUInt16",
+		"funcName": "CallUInt16",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "uint16"}
+	  },
+	  {
+		"name": "CallInt32",
+		"funcName": "CallInt32",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "int32"}
+	  },
+	  {
+		"name": "CallUInt32",
+		"funcName": "CallUInt32",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "uint32"}
+	  },
+	  {
+		"name": "CallInt64",
+		"funcName": "CallInt64",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "int64"}
+	  },
+	  {
+		"name": "CallUInt64",
+		"funcName": "CallUInt64",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "uint64"}
+	  },
+	  {
+		"name": "CallFloat",
+		"funcName": "CallFloat",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "float"}
+	  },
+	  {
+		"name": "CallDouble",
+		"funcName": "CallDouble",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "double"}
+	  },
+	  {
+		"name": "CallPointer",
+		"funcName": "CallPointer",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"}
+		],
+		"retType": {"type": "ptr64"}
+	  },
+	  {
+		"name": "CallAggr",
+		"funcName": "CallAggr",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "funcptr"},
+		  {"type": "ptr64", "name": "aggrptr"},
+		  {"type": "ptr64", "name": "returnValue"}
+		],
+		"retType": {"type": "void"}
+	  },
+
+	  {
+		"name": "BeginCallAggr",
+		"funcName": "BeginCallAggr",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"},
+		  {"type": "ptr64", "name": "aggrptr"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  
+	  {
+		"name": "GetError",
+		"funcName": "GetError",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "vm"}
+		],
+		"retType": {"type": "int32"}
+	  },	
+	  
+	  {
+		"name": "NewAggr",
+		"funcName": "NewAggr",
+		"paramTypes": [
+		  {"type": "uint64", "name": "fieldCount"},
+		  {"type": "uint64", "name": "size"}
+		],
+		"retType": {"type": "ptr64"}
+	  },	
+	  {
+		"name": "AggrField",
+		"funcName": "AggrField",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "Aggrptr"},
+		  {"type": "char8", "name": "type"},
+		  {"type": "int32", "name": "offset"},
+		  {"type": "uint64", "name": "arrayLength"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "CloseAggr",
+		"funcName": "CloseAggr",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "Aggrptr"}
+		],
+		"retType": {"type": "void"}
+	  },
+	  {
+		"name": "FreeAggr",
+		"funcName": "FreeAggr",
+		"paramTypes": [
+		  {"type": "ptr64", "name": "Aggrptr"}
+		],
+		"retType": {"type": "void"}
+	  },
+
+	  {
+		"name": "GetModeFromCCSigChar",
+		"funcName": "GetModeFromCCSigChar",
+		"paramTypes": [
+		  {"type": "char8", "name": "sigChar"}
+		],
+		"retType": {"type": "int32"}
+	  }
+	]
+}

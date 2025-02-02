@@ -1,0 +1,3 @@
+D:/dyncall/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-g52ma1/CMakeFiles/cmTC_e60cc.dir
+D:/dyncall/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-g52ma1/CMakeFiles/edit_cache.dir
+D:/dyncall/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-g52ma1/CMakeFiles/rebuild_cache.dir
