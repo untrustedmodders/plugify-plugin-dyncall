@@ -8,7 +8,7 @@
 	"createdByURL": "https://dyncall.org/",
 	"docsURL": "https://dyncall.org/documentation",
 	"downloadURL": "https://github.com/untrustedmodders/dyncall/releases/download/v${DYNCALL_VERSION}/${DYNCALL_PACKAGE}.zip",
-	"updateURL": "https://untrustedmodders.github.com/dyncall/dyncall.json",
+	"updateURL": "https://untrustedmodders.github.io/dyncall/dyncall.json",
 	"entryPoint": "bin/dyncall",
 	"supportedPlatforms": [],
 	"languageModule": {
