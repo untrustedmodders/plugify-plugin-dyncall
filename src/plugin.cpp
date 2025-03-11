@@ -3,12 +3,9 @@
 #include <dyncall/dyncall.h>
 
 class DynCallPlugin final : public plg::IPluginEntry {
-	void OnPluginStart() final {}
-
-	void OnPluginEnd() final {}
 } g_dynCallPlugin;
 
-EXPOSE_PLUGIN(PLUGIN_API, &g_dynCallPlugin)
+EXPOSE_PLUGIN(PLUGIN_API, DynCallPlugin, &g_dynCallPlugin)
 
 // TODO: Validate ptr and make sure that allocated vm a
 
