@@ -3,16 +3,36 @@
 #include <dyncall/dyncall.h>
 
 class DynCallPlugin final : public plg::IPluginEntry {
+public:
+    std::mutex mutex;
+    std::unordered_map<DCCallVM*, std::vector<std::unique_ptr<std::string>>> m_storage;
 } g_dynCallPlugin;
 
 EXPOSE_PLUGIN(PLUGIN_API, DynCallPlugin, &g_dynCallPlugin)
 
 // TODO: Validate ptr and make sure that allocated vm a
 
-extern "C" {
-	PLUGIN_API DCCallVM* NewVM(size_t size) { return dcNewCallVM(size); }
+PLUGIFY_WARN_PUSH()
 
-	PLUGIN_API void Free(DCCallVM* vm) { dcFree(vm); }
+#if defined(__clang)
+PLUGIFY_WARN_IGNORE("-Wreturn-type-c-linkage")
+#elif defined(_MSC_VER)
+PLUGIFY_WARN_IGNORE(4190)
+#endif
+
+extern "C" {
+	PLUGIN_API DCCallVM* NewVM(size_t size) {
+        std::scoped_lock lock(g_dynCallPlugin.mutex);
+        auto* vm = dcNewCallVM(size);
+        g_dynCallPlugin.m_storage[vm] = std::vector<std::unique_ptr<std::string>>();
+        return vm;
+    }
+
+	PLUGIN_API void Free(DCCallVM* vm) {
+        std::scoped_lock lock(g_dynCallPlugin.mutex);
+        g_dynCallPlugin.m_storage.erase(vm);
+        dcFree(vm);
+    }
 
 	PLUGIN_API void Reset(DCCallVM* vm) { dcReset(vm); }
 
@@ -45,6 +65,12 @@ extern "C" {
 
 	PLUGIN_API void ArgPointer(DCCallVM* vm, void* value) { dcArgPointer(vm, value); }
 
+	PLUGIN_API void ArgString(DCCallVM* vm, const plg::string& value) {
+        std::scoped_lock lock(g_dynCallPlugin.mutex);
+        const auto& str = *g_dynCallPlugin.m_storage[vm].emplace_back(std::make_unique<std::string>(value));
+        dcArgPointer(vm, (DCpointer) str.c_str());
+    }
+
 	PLUGIN_API void ArgAggr(DCCallVM* vm, DCaggr* ag, void* value) { dcArgAggr(vm, ag, value); }
 
 
@@ -76,6 +102,8 @@ extern "C" {
 
 	PLUGIN_API void* CallPointer(DCCallVM* vm, void* funcptr) { return dcCallPointer(vm, funcptr); }
 
+	PLUGIN_API plg::string CallString(DCCallVM* vm, void* funcptr) { return (const char*)(dcCallPointer(vm, funcptr)); }
+
 	PLUGIN_API void CallAggr(DCCallVM* vm, void* funcptr, DCaggr* ag, void* returnValue) { dcCallAggr(vm, funcptr, ag, returnValue); }
 
 	PLUGIN_API void BeginCallAggr(DCCallVM* vm, DCaggr* ag) { dcBeginCallAggr(vm, ag); }
@@ -95,3 +123,5 @@ extern "C" {
 
 	PLUGIN_API int GetModeFromCCSigChar(char sigChar) { return dcGetModeFromCCSigChar(sigChar); }
 }
+
+PLUGIFY_WARN_POP()
