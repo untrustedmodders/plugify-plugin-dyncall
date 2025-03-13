@@ -4,7 +4,7 @@
 
 class DynCallPlugin final : public plg::IPluginEntry {
 public:
-    std::mutex mutex;
+    std::mutex m_mutex;
     std::unordered_map<DCCallVM*, std::vector<std::unique_ptr<std::string>>> m_storage;
 } g_dynCallPlugin;
 
@@ -22,14 +22,14 @@ PLUGIFY_WARN_IGNORE(4190)
 
 extern "C" {
 	PLUGIN_API DCCallVM* NewVM(size_t size) {
-        std::scoped_lock lock(g_dynCallPlugin.mutex);
+        std::scoped_lock lock(g_dynCallPlugin.m_mutex);
         auto* vm = dcNewCallVM(size);
         g_dynCallPlugin.m_storage[vm] = std::vector<std::unique_ptr<std::string>>();
         return vm;
     }
 
 	PLUGIN_API void Free(DCCallVM* vm) {
-        std::scoped_lock lock(g_dynCallPlugin.mutex);
+        std::scoped_lock lock(g_dynCallPlugin.m_mutex);
         g_dynCallPlugin.m_storage.erase(vm);
         dcFree(vm);
     }
@@ -66,7 +66,7 @@ extern "C" {
 	PLUGIN_API void ArgPointer(DCCallVM* vm, void* value) { dcArgPointer(vm, value); }
 
 	PLUGIN_API void ArgString(DCCallVM* vm, const plg::string& value) {
-        std::scoped_lock lock(g_dynCallPlugin.mutex);
+        std::scoped_lock lock(g_dynCallPlugin.m_mutex);
         const auto& str = *g_dynCallPlugin.m_storage[vm].emplace_back(std::make_unique<std::string>(value));
         dcArgPointer(vm, (DCpointer) str.c_str());
     }
