@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/untrustedmodders/dyncall/compare/v1.1.0...v1.1.1) (2025-03-13)
+
+
+### Bug Fixes
+
+* add missing include & fix string ([e6b104c](https://github.com/untrustedmodders/dyncall/commit/e6b104c5e0c7a6b4424fc3b36a5a1bae4ae764c7))
+
 ## [1.1.0](https://github.com/untrustedmodders/dyncall/compare/v1.0.2...v1.1.0) (2025-03-13)
 
 
