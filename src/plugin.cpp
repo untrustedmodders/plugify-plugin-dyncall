@@ -1,4 +1,5 @@
 #include <plugify/cpp_plugin.hpp>
+#include <mutex>
 #include <plugin_export.h>
 #include <dyncall/dyncall.h>
 
@@ -102,7 +103,13 @@ extern "C" {
 
 	PLUGIN_API void* CallPointer(DCCallVM* vm, void* funcptr) { return dcCallPointer(vm, funcptr); }
 
-	PLUGIN_API plg::string CallString(DCCallVM* vm, void* funcptr) { return (const char*)(dcCallPointer(vm, funcptr)); }
+	PLUGIN_API plg::string CallString(DCCallVM* vm, void* funcptr) {
+        const char* str = static_cast<const char *>(dcCallPointer(vm, funcptr));
+        if (str == nullptr)
+            return {};
+        else
+            return str;
+    }
 
 	PLUGIN_API void CallAggr(DCCallVM* vm, void* funcptr, DCaggr* ag, void* returnValue) { dcCallAggr(vm, funcptr, ag, returnValue); }
 
