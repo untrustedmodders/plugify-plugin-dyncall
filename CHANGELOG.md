@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.2](https://github.com/untrustedmodders/dyncall/compare/v1.1.1...v1.1.2) (2025-03-17)
+
+
+### Bug Fixes
+
+* update includes ([e6e94ac](https://github.com/untrustedmodders/dyncall/commit/e6e94ac17a5137d0e15501696861de98a0f50f83))
+* update plugify ([6fd7c34](https://github.com/untrustedmodders/dyncall/commit/6fd7c343629001708281aa656e21c5ed5f797810))
+
 ## [1.1.1](https://github.com/untrustedmodders/dyncall/compare/v1.1.0...v1.1.1) (2025-03-13)
 
 
