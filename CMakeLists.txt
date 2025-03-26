@@ -71,13 +71,13 @@ if(NOT COMPILER_SUPPORTS_FORMAT)
     target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only)
 endif()
 
-file(READ "${CMAKE_SOURCE_DIR}/version.txt" VERSION_FILE_CONTENTS)
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/version.txt" VERSION_FILE_CONTENTS)
 string(STRIP "${VERSION_FILE_CONTENTS}" VERSION_FILE_CONTENTS)
 set(DYNCALL_VERSION "${VERSION_FILE_CONTENTS}" CACHE STRING "Set version name")
 set(DYNCALL_PACKAGE "dyncall" CACHE STRING "Set package name")
 string(REPLACE "v" "" DYNCALL_VERSION "${DYNCALL_VERSION}")
 
 configure_file(
-    ${CMAKE_SOURCE_DIR}/dyncall.pplugin.in
-    ${CMAKE_BINARY_DIR}/dyncall.pplugin
+    ${CMAKE_CURRENT_SOURCE_DIR}/dyncall.pplugin.in
+    ${CMAKE_CURRENT_BINARY_DIR}/dyncall.pplugin
 )
