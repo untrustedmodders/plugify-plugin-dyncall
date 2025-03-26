@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.3](https://github.com/untrustedmodders/dyncall/compare/v1.1.2...v1.1.3) (2025-03-26)
+
+
+### Bug Fixes
+
+* build when dep ([0bb515c](https://github.com/untrustedmodders/dyncall/commit/0bb515c0a286f84757bf0aa98a8c7cb6ac660807))
+* update action build ([9a350cd](https://github.com/untrustedmodders/dyncall/commit/9a350cdea646987f8522bc90751fc0243c814ee2))
+* update build action ([5cb1603](https://github.com/untrustedmodders/dyncall/commit/5cb1603bd5dd591b6ee2b05d63e5f3df8dab9993))
+
 ## [1.1.2](https://github.com/untrustedmodders/dyncall/compare/v1.1.1...v1.1.2) (2025-03-17)
 
 
