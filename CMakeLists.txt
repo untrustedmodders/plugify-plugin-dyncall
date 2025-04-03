@@ -5,7 +5,22 @@ if(POLICY CMP0092)
 endif()
 
 
-project(dync VERSION 1.0.0.0 DESCRIPTION "DynCall Plugin" HOMEPAGE_URL "https://github.com/untrustedmodders/dyncall" LANGUAGES CXX)
+file(READ "${CMAKE_CURRENT_SOURCE_DIR}/version.txt" VERSION_FILE_CONTENTS)
+string(STRIP "${VERSION_FILE_CONTENTS}" VERSION_FILE_CONTENTS)
+set(DYNCALL_VERSION "${VERSION_FILE_CONTENTS}" CACHE STRING "Set version name")
+set(DYNCALL_PACKAGE "dyncall" CACHE STRING "Set package name")
+string(REPLACE "v" "" DYNCALL_VERSION "${DYNCALL_VERSION}")
+string(REGEX REPLACE "[.+-]" ";" DYNCALL_VERSION_LIST ${DYNCALL_VERSION})
+list(GET DYNCALL_VERSION_LIST 0 DYNCALL_VERSION_MAJOR)
+list(GET DYNCALL_VERSION_LIST 1 DYNCALL_VERSION_MINOR)
+list(GET DYNCALL_VERSION_LIST 2 DYNCALL_VERSION_PATCH)
+
+project(dync 
+        VERSION "${DYNCALL_VERSION_MAJOR}.${DYNCALL_VERSION_MINOR}.${DYNCALL_VERSION_PATCH}"
+        DESCRIPTION "DynCall Plugin" 
+        HOMEPAGE_URL "https://github.com/untrustedmodders/dyncall" 
+        LANGUAGES CXX
+)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -60,7 +75,6 @@ elseif(UNIX)
 endif()
 
 if(LINUX)
-    target_compile_definitions(${PROJECT_NAME} PRIVATE _GLIBCXX_USE_CXX11_ABI=0)
     target_link_libraries(${PROJECT_NAME} PRIVATE -static-libstdc++ -static-libgcc)
 endif()
 
@@ -70,12 +84,6 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 if(NOT COMPILER_SUPPORTS_FORMAT)
     target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt-header-only)
 endif()
-
-file(READ "${CMAKE_CURRENT_SOURCE_DIR}/version.txt" VERSION_FILE_CONTENTS)
-string(STRIP "${VERSION_FILE_CONTENTS}" VERSION_FILE_CONTENTS)
-set(DYNCALL_VERSION "${VERSION_FILE_CONTENTS}" CACHE STRING "Set version name")
-set(DYNCALL_PACKAGE "dyncall" CACHE STRING "Set package name")
-string(REPLACE "v" "" DYNCALL_VERSION "${DYNCALL_VERSION}")
 
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/dyncall.pplugin.in
