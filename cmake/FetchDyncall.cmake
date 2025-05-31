@@ -1,3 +1,10 @@
+cmake_policy(PUSH)
+
+if(POLICY CMP0135)
+    # Allow calling FetchContent_Populate directly.
+    cmake_policy(SET CMP0135 OLD)
+endif()
+
 include(FetchContent)
 
 message(STATUS "Pulling and configuring DynCall")
@@ -9,3 +16,5 @@ FetchContent_Declare(
 )
 
 FetchContent_MakeAvailable(DynCall)
+
+cmake_policy(POP)
