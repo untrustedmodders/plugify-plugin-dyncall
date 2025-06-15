@@ -56,7 +56,7 @@ add_library(${PROJECT_NAME} SHARED ${PLUGIN_SOURCES})
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} external/dyncall/include)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE dyncall_s)
-include_directories(${CMAKE_BINARY_DIR}/_deps/dyncall-src/)
+include_directories(${dyncall_SOURCE_DIR})
 
 if(MSVC)
     target_compile_options(${PROJECT_NAME} PRIVATE /W4 /WX)
