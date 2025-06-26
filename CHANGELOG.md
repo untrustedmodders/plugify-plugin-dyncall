@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.4](https://github.com/untrustedmodders/dyncall/compare/v1.1.3...v1.1.4) (2025-06-26)
+
+
+### Bug Fixes
+
+* add cmake versioning ([eb133f8](https://github.com/untrustedmodders/dyncall/commit/eb133f8b40eb4e4995595ba5a25ff7898b49f657))
+* add default build type ([6dcd165](https://github.com/untrustedmodders/dyncall/commit/6dcd16567d9b507d527412df0301c7b56549e2a5))
+* add macos export symbols ([1d3ecbc](https://github.com/untrustedmodders/dyncall/commit/1d3ecbc9ba5b1b8e09a58668ae89d57a005a99fc))
+* update arch tags for action build ([6a8e668](https://github.com/untrustedmodders/dyncall/commit/6a8e668a948b97b837f28519e1b6a67e48c4bb53))
+* update plugify ([f2a9ba8](https://github.com/untrustedmodders/dyncall/commit/f2a9ba82a290f38cc2b4ab2784434ddab4450dfe))
+* update plugify ([4071d0a](https://github.com/untrustedmodders/dyncall/commit/4071d0afbfd77d44d11ada6396773a2d648d4566))
+* update version naming ([a8315d1](https://github.com/untrustedmodders/dyncall/commit/a8315d1709f222ef990b9ec1b812ff1ddd711d81))
+
 ## [1.1.3](https://github.com/untrustedmodders/dyncall/compare/v1.1.2...v1.1.3) (2025-03-26)
 
 
