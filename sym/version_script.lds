@@ -19,6 +19,7 @@
 		ArgDouble;
 		ArgPointer;
 		ArgAggr;
+		ArgString;
 		CallVoid;
 		CallBool;
 		CallChar;
@@ -34,6 +35,7 @@
 		CallDouble;
 		CallPointer;
 		CallAggr;
+		CallString;
 		BeginCallAggr;
 		GetError;
 		NewAggr;

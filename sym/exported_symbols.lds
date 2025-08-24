@@ -20,6 +20,7 @@ _ArgFloat
 _ArgDouble
 _ArgPointer
 _ArgAggr
+_ArgString
 _CallVoid
 _CallBool
 _CallChar
@@ -35,6 +36,7 @@ _CallFloat
 _CallDouble
 _CallPointer
 _CallAggr
+_CallString
 _BeginCallAggr
 _GetError
 _NewAggr
