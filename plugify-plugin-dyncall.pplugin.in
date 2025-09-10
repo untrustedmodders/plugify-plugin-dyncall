@@ -1,21 +1,16 @@
 {
   "$schema": "https://raw.githubusercontent.com/untrustedmodders/plugify/refs/heads/main/schemas/plugin.schema.json",
-  "fileVersion": 1,
   "version": "${DYNCALL_VERSION}",
-  "friendlyName": "DynCall API",
+  "name": "${DYNCALL_PACKAGE}",
   "description": "The dyncall library encapsulates architecture-, OS- and compiler-specific function call semantics.",
-  "createdBy": "Daniel Adler & Tassilo Philipp",
-  "createdByURL": "https://dyncall.org/",
-  "docsURL": "https://dyncall.org/documentation",
-  "downloadURL": "https://github.com/untrustedmodders/dyncall/releases/download/v${DYNCALL_VERSION}/${DYNCALL_PACKAGE}.zip",
-  "updateURL": "https://untrustedmodders.github.io/dyncall/dyncall.json",
-  "entryPoint": "bin/dyncall",
-  "supportedPlatforms": [],
-  "languageModule": {
-    "name": "cpp"
-  },
+  "author": "Daniel Adler & Tassilo Philipp",
+  "website": "https://dyncall.org/",
+  "licence": "MIT",
+  "entry": "bin/plugify-plugin-dyncall",
+  "platforms": [],
+  "language": "cpp",
   "dependencies": [],
-  "exportedMethods": [
+  "methods": [
     {
       "name": "NewVM",
       "funcName": "NewVM",
