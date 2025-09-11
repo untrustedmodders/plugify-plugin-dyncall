@@ -5,7 +5,7 @@
   "description": "The dyncall library encapsulates architecture-, OS- and compiler-specific function call semantics.",
   "author": "Daniel Adler & Tassilo Philipp",
   "website": "https://dyncall.org/",
-  "licence": "MIT",
+  "license": "MIT",
   "entry": "bin/plugify-plugin-dyncall",
   "platforms": [],
   "language": "cpp",
