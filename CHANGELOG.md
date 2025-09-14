@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.0.0](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v1.1.5...v2.0.0) (2025-09-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* update for a new plugify
+
+### Features
+
+* update for a new plugify ([8e07963](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/8e0796338337fdfde01af3d4664db9cdcbc92f22))
+
+
+### Bug Fixes
+
+* add conda recipe ([e2057ee](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/e2057ee1e98137f0df87a2c2247df80201b48364))
+* add symbols ([0e2f3a3](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/0e2f3a3e5ce0f46d42d77a4eb85e97e344bdd87d))
+* replace static by reinterpret cast ([94318fa](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/94318fa6f90b8728dbcb1edba1baa9cde4188767))
+* update clang format ([c184959](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/c184959829a311ce669ed9807011b600a14eab32))
+
 ## [1.1.5](https://github.com/untrustedmodders/dyncall/compare/v1.1.4...v1.1.5) (2025-08-01)
 
 
