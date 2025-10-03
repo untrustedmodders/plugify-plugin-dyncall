@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.1...v2.0.2) (2025-10-03)
+
+
+### Bug Fixes
+
+* improve san and debug symbols on windows ([204b751](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/204b7519d6970be322313c5d65473cd9f9f7eb69))
+
 ## [2.0.1](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.0...v2.0.1) (2025-09-27)
 
 
