@@ -401,6 +401,26 @@
       }
     },
     {
+      "name": "CallVoid",
+      "funcName": "CallVoid",
+      "description": "Calls a function with no type using the specified virtual machine.",
+      "paramTypes": [
+        {
+          "type": "ptr64",
+          "name": "vm",
+          "description": "A pointer to the virtual machine."
+        },
+        {
+          "type": "ptr64",
+          "name": "funcptr",
+          "description": "A pointer to the function to be called."
+        }
+      ],
+      "retType": {
+        "type": "void"
+      }
+    },
+    {
       "name": "CallBool",
       "funcName": "CallBool",
       "description": "Calls a function with a boolean return type using the specified virtual machine.",
