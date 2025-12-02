@@ -21,6 +21,27 @@ PLUGIFY_WARN_IGNORE("-Wreturn-type-c-linkage")
 PLUGIFY_WARN_IGNORE(4190)
 #endif
 
+enum SigChar : char {
+	Void        = 'v',
+	Bool        = 'B',
+	Char        = 'c',
+	UChar       = 'C',
+	Short       = 's',
+	UShort      = 'S',
+	Int         = 'i',
+	UInt        = 'I',
+	Long        = 'j',
+	ULong       = 'J',
+	LongLong    = 'l',
+	ULongLong   = 'L',
+	Float       = 'f',
+	Double      = 'd',
+	Pointer     = 'p',
+	String      = 'Z',
+	Aggregate   = 'A',
+	EndArg      = ')'
+};
+
 extern "C" {
 	PLUGIN_API DCCallVM* NewVM(size_t size) {
         std::scoped_lock lock(g_dynCallPlugin.m_mutex);
@@ -121,7 +142,7 @@ extern "C" {
 
 	PLUGIN_API DCaggr* NewAggr(size_t fieldCount, size_t size) { return dcNewAggr(fieldCount, size); }
 
-	PLUGIN_API void AggrField(DCaggr* ag, char type, int offset, size_t arrayLength) { dcAggrField(ag, type, offset, arrayLength); }
+	PLUGIN_API void AggrField(DCaggr* ag, SigChar type, int offset, size_t arrayLength) { dcAggrField(ag, type, offset, arrayLength); }
 
 	PLUGIN_API void CloseAggr(DCaggr* ag) { dcCloseAggr(ag); }
 

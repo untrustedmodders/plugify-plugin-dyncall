@@ -814,9 +814,33 @@
           "description": "A pointer to the aggregate structure."
         },
         {
-          "type": "char8",
+          "type": "int8",
           "name": "type",
-          "description": "The type of the field to be added."
+          "description": "The type of the field to be added.",
+          "enum": {
+            "name": "SigChar",
+            "description": "Character codes representing dyncall signature types.",
+            "values": [
+              { "value": 118, "name": "Void",      "description": "Void type." },
+              { "value": 66,  "name": "Bool",      "description": "Boolean type." },
+              { "value": 99,  "name": "Char",      "description": "Signed char." },
+              { "value": 67,  "name": "UChar",     "description": "Unsigned char." },
+              { "value": 115, "name": "Short",     "description": "Signed short." },
+              { "value": 83,  "name": "UShort",    "description": "Unsigned short." },
+              { "value": 105, "name": "Int",       "description": "Signed int." },
+              { "value": 73,  "name": "UInt",      "description": "Unsigned int." },
+              { "value": 106, "name": "Long",      "description": "Signed long." },
+              { "value": 74,  "name": "ULong",     "description": "Unsigned long." },
+              { "value": 108, "name": "LongLong",  "description": "Signed long long." },
+              { "value": 76,  "name": "ULongLong", "description": "Unsigned long long." },
+              { "value": 102, "name": "Float",     "description": "Float type." },
+              { "value": 100, "name": "Double",    "description": "Double type." },
+              { "value": 112, "name": "Pointer",   "description": "Pointer type, also used for arrays." },
+              { "value": 90,  "name": "String",    "description": "String pointer, distinct from generic pointer." },
+              { "value": 65,  "name": "Aggregate", "description": "Struct or union described out-of-band." },
+              { "value": 41,  "name": "EndArg",    "description": "Marks end of argument list." }
+            ]
+          }
         },
         {
           "type": "int32",
@@ -881,6 +905,238 @@
         "type": "int32",
         "description": "Returns the mode corresponding to the signature character."
       }
+    }
+  ],
+  "classes": [
+    {
+      "name": "DCCallVM",
+      "group": "DynCall",
+      "description": "Dynamic call virtual machine for making dynamic function calls with proper argument marshalling.",
+      "handleType": "ptr64",
+      "invalidValue": "0",
+      "constructors": [
+        "NewVM"
+      ],
+      "destructor": "Free",
+      "bindings": [
+        {
+          "name": "Reset",
+          "method": "Reset",
+          "bindSelf": true
+        },
+        {
+          "name": "Mode",
+          "method": "Mode",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgBool",
+          "method": "ArgBool",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgChar",
+          "method": "ArgChar",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgInt8",
+          "method": "ArgInt8",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgUInt8",
+          "method": "ArgUInt8",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgInt16",
+          "method": "ArgInt16",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgUInt16",
+          "method": "ArgUInt16",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgInt32",
+          "method": "ArgInt32",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgUInt32",
+          "method": "ArgUInt32",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgInt64",
+          "method": "ArgInt64",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgUInt64",
+          "method": "ArgUInt64",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgFloat",
+          "method": "ArgFloat",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgDouble",
+          "method": "ArgDouble",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgPointer",
+          "method": "ArgPointer",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgString",
+          "method": "ArgString",
+          "bindSelf": true
+        },
+        {
+          "name": "ArgAggr",
+          "method": "ArgAggr",
+          "bindSelf": true,
+          "paramAliases": [
+            {
+              "name": "DCaggr",
+              "owner": false
+            }
+          ]
+        },
+        {
+          "name": "CallVoid",
+          "method": "CallVoid",
+          "bindSelf": true
+        },
+        {
+          "name": "CallBool",
+          "method": "CallBool",
+          "bindSelf": true
+        },
+        {
+          "name": "CallChar",
+          "method": "CallChar",
+          "bindSelf": true
+        },
+        {
+          "name": "CallInt8",
+          "method": "CallInt8",
+          "bindSelf": true
+        },
+        {
+          "name": "CallUInt8",
+          "method": "CallUInt8",
+          "bindSelf": true
+        },
+        {
+          "name": "CallInt16",
+          "method": "CallInt16",
+          "bindSelf": true
+        },
+        {
+          "name": "CallUInt16",
+          "method": "CallUInt16",
+          "bindSelf": true
+        },
+        {
+          "name": "CallInt32",
+          "method": "CallInt32",
+          "bindSelf": true
+        },
+        {
+          "name": "CallUInt32",
+          "method": "CallUInt32",
+          "bindSelf": true
+        },
+        {
+          "name": "CallInt64",
+          "method": "CallInt64",
+          "bindSelf": true
+        },
+        {
+          "name": "CallUInt64",
+          "method": "CallUInt64",
+          "bindSelf": true
+        },
+        {
+          "name": "CallFloat",
+          "method": "CallFloat",
+          "bindSelf": true
+        },
+        {
+          "name": "CallDouble",
+          "method": "CallDouble",
+          "bindSelf": true
+        },
+        {
+          "name": "CallPointer",
+          "method": "CallPointer",
+          "bindSelf": true
+        },
+        {
+          "name": "CallString",
+          "method": "CallString",
+          "bindSelf": true
+        },
+        {
+          "name": "CallAggr",
+          "method": "CallAggr",
+          "bindSelf": true,
+          "paramAliases": [
+            null,
+            {
+              "name": "DCaggr",
+              "owner": false
+            }
+          ]
+        },
+        {
+          "name": "BeginCallAggr",
+          "method": "BeginCallAggr",
+          "bindSelf": true,
+          "paramAliases": [
+            {
+              "name": "DCaggr",
+              "owner": false
+            }
+          ]
+        },
+        {
+          "name": "GetError",
+          "method": "GetError",
+          "bindSelf": true
+        }
+      ]
+    },
+    {
+      "name": "DCaggr",
+      "group": "DynCall",
+      "description": "Aggregate type descriptor for passing/returning structs by value in dynamic calls.",
+      "handleType": "ptr64",
+      "invalidValue": "0",
+      "constructors": [
+        "NewAggr"
+      ],
+      "destructor": "FreeAggr",
+      "bindings": [
+        {
+          "name": "AggrField",
+          "method": "AggrField",
+          "bindSelf": true
+        },
+        {
+          "name": "CloseAggr",
+          "method": "CloseAggr",
+          "bindSelf": true
+        }
+      ]
     }
   ]
 }
