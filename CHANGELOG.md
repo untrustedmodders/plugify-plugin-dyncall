@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.4](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.3...v2.0.4) (2025-12-02)
+
+
+### Bug Fixes
+
+* add class wrappers ([ead1c26](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/ead1c26aa136adb13635fe6e62271adfb63f2f65))
+
 ## [2.0.3](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.2...v2.0.3) (2025-11-30)
 
 
