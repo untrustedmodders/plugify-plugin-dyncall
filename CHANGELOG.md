@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.5](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.4...v2.0.5) (2025-12-13)
+
+
+### Bug Fixes
+
+* update plugify ([5e50e28](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/5e50e287baeebec27802d8a1d90a8042a03dd73a))
+* update plugify ([a86cf52](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/a86cf520ef1ac066e93810c69642bfd2f0da912e))
+
 ## [2.0.4](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.3...v2.0.4) (2025-12-02)
 
 
