@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.6](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.5...v2.0.6) (2026-01-03)
+
+
+### Bug Fixes
+
+* add build type to configure step ([b362f76](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/b362f769826ca2a67378a7c0a24d7641a6b3ac51))
+
 ## [2.0.5](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.4...v2.0.5) (2025-12-13)
 
 
