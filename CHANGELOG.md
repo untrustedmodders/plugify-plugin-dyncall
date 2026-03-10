@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.8](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.7...v2.0.8) (2026-03-10)
+
+
+### Bug Fixes
+
+* typo in cmake ([31545e5](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/31545e5889e453f3f823f81078cf1aa173ab9e52))
+
 ## [2.0.7](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.6...v2.0.7) (2026-03-10)
 
 
