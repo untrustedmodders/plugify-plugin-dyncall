@@ -3,13 +3,13 @@
 #include <plugin_export.h>
 #include <dyncall/dyncall.h>
 
-class DynCallPlugin final : public plg::IPluginEntry {
+class DynCallPlugin final : public plg::Plugin {
 public:
     std::mutex m_mutex;
     std::unordered_map<DCCallVM*, std::vector<std::unique_ptr<std::string>>> m_storage;
 } g_dynCallPlugin;
 
-EXPOSE_PLUGIN(PLUGIN_API, DynCallPlugin, &g_dynCallPlugin)
+PLUGIFY_PLUGIN(PLUGIN_API, &g_dynCallPlugin)
 
 // TODO: Validate ptr and make sure that allocated vm a
 
