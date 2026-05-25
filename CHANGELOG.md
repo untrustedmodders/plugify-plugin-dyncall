@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.10](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.9...v2.0.10) (2026-05-25)
+
+
+### Bug Fixes
+
+* add scopes check ([2962341](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/2962341622a3bd236f47a424e34538e6ad4373b6))
+
 ## [2.0.9](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.8...v2.0.9) (2026-05-24)
 
 
