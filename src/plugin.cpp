@@ -39,7 +39,7 @@ enum SigChar : char {
 };
 
 extern "C" {
-	PLUGIN_API DCCallVM* NewVM(size_t size) {
+	PLUGIN_API DCCallVM* NewVM(uint64_t size) {
         std::scoped_lock lock(g_dynCallPlugin.m_mutex);
         auto* vm = dcNewCallVM(size);
         g_dynCallPlugin.m_storage[vm] = std::vector<std::unique_ptr<std::string>>();
@@ -136,9 +136,9 @@ extern "C" {
 	PLUGIN_API int GetError(DCCallVM* vm) { return dcGetError(vm); }
 
 
-	PLUGIN_API DCaggr* NewAggr(size_t fieldCount, size_t size) { return dcNewAggr(fieldCount, size); }
+	PLUGIN_API DCaggr* NewAggr(uint64_t fieldCount, uint64_t size) { return dcNewAggr(fieldCount, size); }
 
-	PLUGIN_API void AggrField(DCaggr* ag, SigChar type, int offset, size_t arrayLength) { dcAggrField(ag, type, offset, arrayLength); }
+	PLUGIN_API void AggrField(DCaggr* ag, SigChar type, int offset, uint64_t arrayLength) { dcAggrField(ag, type, offset, arrayLength); }
 
 	PLUGIN_API void CloseAggr(DCaggr* ag) { dcCloseAggr(ag); }
 
