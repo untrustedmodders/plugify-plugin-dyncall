@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.10](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.9...v2.0.10) (2026-06-30)
+
+
+### Bug Fixes
+
+* add scopes check ([2962341](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/2962341622a3bd236f47a424e34538e6ad4373b6))
+* replace war ignore by plugin's macro ([2de148a](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/2de148afcdfcb48e8018676713965620490e44b1))
+* set correct types for 32bit mode ([99ec00b](https://github.com/untrustedmodders/plugify-plugin-dyncall/commit/99ec00b33275ba3d95a3919105e725bc0e298df9))
+
 ## [2.0.9](https://github.com/untrustedmodders/plugify-plugin-dyncall/compare/v2.0.8...v2.0.9) (2026-05-24)
 
 
